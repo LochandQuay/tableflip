@@ -13,7 +13,6 @@ const slashCommandParser =
     switch(body.command) {
       case '/tableflip':
         return resolve({
-          response_type: 'in_channel',
           as_user: true,
           text: '(╯°□°）╯︵ ┻━┻',
           mrkdwn: false
@@ -25,6 +24,12 @@ const slashCommandParser =
           text: '┬─┬ノ(@_@ノ)',
           mrkdwn: false
         });
+      case '/doubletableflip':
+        return resolve({
+          as_user: true,
+          text: '┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻',
+          mrkdwn: false
+        })
       default:
         return;
     }

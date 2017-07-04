@@ -1,3 +1,5 @@
+'use strict';
+
 const Express = require('express');
 const bodyParser = require('body-parser');
 const slashCommandParser = require('./slashCommand');
@@ -12,11 +14,12 @@ if (!slackToken) {
   process.exit(1);
 }
 
-const port = PORT || 80;
+const port = PORT || 8080;
 
 const slashCommand = slashCommandParser(slackToken);
 
 app.post('/', (req, res) => {
+  console.log(req);
   slashCommand(req.body)
     .then((result) => {
       return res.json(result);
