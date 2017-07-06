@@ -8,11 +8,14 @@ const slashCommandParser =
 
     }
 
+    
+
     console.log(body);
 
     switch(body.command) {
       case '/tableflip':
         return resolve({
+          response_type: 'in_channel',
           as_user: true,
           text: '(╯°□°）╯︵ ┻━┻',
           mrkdwn: false
